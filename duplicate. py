@@ -1,0 +1,12 @@
+def removeDuplicates(nums):
+    if not nums:
+        return 0
+
+    i = 0  # pointer to place next unique item
+
+    for j in range(1, len(nums)):
+        if nums[j] != nums[i]:  # found a new unique item
+            i += 1
+            nums[i] = nums[j]
+
+    return i + 1  # length of unique portion
