@@ -1,12 +1,22 @@
-def removeDuplicates(nums):
+#Day_5
+#Removing Duplicate elements from a list and printing only the unique elements
+#intution:we will first initialize a pointer i to 0th position
+#and we will start comaring the 2nd element at 1st position and we will start comapring,
+#if we found a uniqe value we will increment i and the compare with next element 
+
+def unique(nums):#Finding the unique element logic function
     if not nums:
         return 0
-
-    i = 0  # pointer to place next unique item
-
-    for j in range(1, len(nums)):
-        if nums[j] != nums[i]:  # found a new unique item
-            i += 1
-            nums[i] = nums[j]
-
-    return i + 1  # length of unique portion
+    i=0
+    for j in range(1,len(nums)):
+        if nums[j]!=nums[i]:
+            i+=1
+            nums[i]=nums[j]
+    return i+1
+            
+#test code
+nums=[0,0,1,2,1,3,2,4,3,5]
+nums.sort()
+result=unique(nums)
+print("Lengt of the unique elements is:",result)
+print("The unique elements are:",nums[:result])
